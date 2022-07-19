@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .title {
+    text-align: center;
+    line-height: 2em;
+  }
+  
+  .content {
+    margin: 1rem auto;
+    width: 90%;
+    max-width: 1020px;
+    display: grid;
+    grid-template-areas: "viz params" "viz answer";
+    grid-template-columns: 1fr 400px;
+    grid-gap: 1rem;
+  }
+  
+  @media (max-width: 729px) {
+    .content {
+      grid-template-areas: "params" "viz" "answer";
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .container {
+    color: #3e3e3e;
+    border: 2px solid #3e3e3e;
+    border-radius: 0.3em;
+  }
+  
+  .vizual {
+    position: relative;
+    grid-area: viz;
+    min-height: 300px;
+    height: 50vh;
+  }
+  
+  .spring {
+    position: relative;
+    margin: 0 auto;
+    transform-origin: top;
+    width: 0;
+    height: 50%;
+  }
+  
+  .spring-element {
+    display: block;
+    border: 1px solid #3e3e3e;
+    border-radius: 0.5em;
+    width: 0;
+    height: 10%;
+  }
+  .spring-element--left {
+    transform: rotate(30deg);
+  }
+  .spring-element--right {
+    transform: rotate(-30deg);
+  }
+  
+  .ball {
+    position: absolute;
+    top: auto;
+    bottom: -1em;
+    left: -1em;
+    width: 2em;
+    height: 2em;
+    background-color: #488570;
+    border-radius: 50%;
+    transition: all 0.2s linear;
+  }
+  
+  .equilibrium {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    border-bottom: 2px dashed #3e3e3e;
+  }
+  
+  .vizual-controls {
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.5em;
+  }
+  
+  .params {
+    grid-area: params;
+  }
+  .param label {
+    display: inline-block;
+    width: 70%;
+  }
+  .param input {
+    float: right;
+    width: 70px;
+  }
+  
+  .param {
+    padding: 0.5rem;
+  }
+  .param:nth-child(2n) {
+    background-color: #eee;
+  }
+  .param:not(:last-child) {
+    padding-bottom: 0.5em;
+  }
+  
+  .answer {
+    grid-area: answer;
+  }
+  
+  .btn {
+    position: relative;
+    padding: 0.5em 1em;
+    background-color: #eee;
+    border: none;
+    border-radius: 0.3em;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.5s linear, top 0.3s ease-in-out;
+  }
+  .btn:hover {
+    background-color: #bbb;
+  }
+  .btn:active {
+    top: 0.1em;
+  }
+  
+  .btn svg {
+    display: block;
+    width: 1em;
+    height: 1em;
+  }
+  
+  .hidden {
+    display: none !important;
+  }

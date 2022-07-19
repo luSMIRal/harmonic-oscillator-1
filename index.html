@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>ПРУЖИННЫЙ МАЯТНИК</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="title">ПРУЖИННЫЙ МАЯТНИК</h1>
+    </header>
+
+    <main class="content">
+      <div class="vizual container" id="vizual">
+        <div class="equilibrium"></div>
+        <div class="spring" id="spring">
+          <span class="spring-element spring-element--left"></span>
+          <span class="spring-element spring-element--right"></span>
+          <span class="spring-element spring-element--left"></span>
+          <span class="spring-element spring-element--right"></span>
+          <span class="spring-element spring-element--left"></span>
+          <span class="spring-element spring-element--right"></span>
+          <span class="spring-element spring-element--left"></span>
+          <span class="spring-element spring-element--right"></span>
+          <span class="spring-element spring-element--left"></span>
+          <!-- <span class="spring-element spring-element--right"></span>/ -->
+          <div class="ball" id="ball"></div>
+        </div>
+
+        <div class="vizual-controls">
+          <button class="btn btn-play" id="btn-play">
+            <svg
+              id="play"
+              version="1.1"
+              viewBox="0 0 100 100"
+              width="100"
+              height="100"
+            >
+              <path d="M 95,50 5,95 5,5 z" />
+            </svg>
+
+           <svg
+              id="stop"
+              class="hidden"
+              version="1.1"
+              viewBox="0 0 100 100"
+              width="100"
+              height="100"
+            >
+              <rect x="0" y="0" width="100" height="100" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="params container">
+        <div class="param">
+          <label for="param-m">Масса груза, <i>m (кг)</i></label>
+          <input id="param-m" type="number">
+        </div>
+
+        <div class="param">
+          <label for="param-k">Жесткость пружины, <i>k (Н/м)</i></label>
+          <input id="param-k" type="number">
+        </div>
+
+        <div class="param">
+          <label for="param-x0">
+            Отклонение от равновесия, <i>x<sub>0</sub> (см)</i>
+          </label>
+          <input id="param-x0" type="number">
+        </div>
+      </div>
+      <div class="answer container">
+        <div class="param">
+          <label for="param-w">
+            Циклическая частота, <i>w<sub>0</sub></i>
+          </label>
+          <input id="param-w" type="number" disabled />
+        </div>
+
+        <div class="param">
+          <label for="param-t">
+            Время колебаний, <i>t (с)</i>
+          </label>
+          <input id="param-t" type="number" min="0" step="1" value="0" disabled />
+        </div>
+
+        <div class="param">
+          <label for="param-wavering">Количество полных колебаний</label>
+          <input id="param-wavering" type="number" disabled />
+        </div>
+
+        <div class="param">
+          <label for="param-x"> Координата <i>x (см)</i> </label>
+          <input id="param-x" type="number" disabled />
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
